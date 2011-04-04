@@ -1,0 +1,5 @@
+user:
+    tableName: User
+    actAs: Timestample
+    column:
+      
