@@ -9,6 +9,32 @@
     <?php include_javascripts() ?>
   </head>
   <body>
-    <?php echo $sf_content ?>
+      <div id="page-wrap">
+          <?php include_partial('global/header') ?>
+
+          <div class="clear"></div>
+            <div id="content">
+            <div class="inner">
+            <div id="maincontent">
+            <form id="searchform" method="get" action="http://localhost/jobs/">
+            <div>
+            <input type="text" onblur="if (this.value == '') {this.value = 'Ажил хайх';}" onfocus="if (this.value == 'Ажил хайх') {this.value = '';}" value="Ажил хайх" name="s" title="" id="search" class="text" />
+            <label for="search"><input type="image" class="submit" title="Хай" alt="Хай" src="/images/search.png"></label>
+            </div>
+            </form>
+            <div class="clear"></div>
+
+          <?php echo $sf_content ?>
+
+            </div><!-- maincontent end -->
+
+            <?php include_partial('homepage/rightSideBar') ?>
+
+            <div class="clear"></div>
+            </div><!-- inner end -->
+            </div><!-- content end -->
+
+          <?php include_partial('global/footer') ?>
+      </div><!-- page-wrap end -->
   </body>
 </html>

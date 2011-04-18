@@ -1,0 +1,17 @@
+News:
+# Starts at the beginning of the line (no whitespace before)
+<?php for ($i = 100; $i <= 130; $i++): ?>
+  job_<?php echo $i ?>:
+    type:  0
+    title:      Python Software Developer <?php echo $i."\n" ?>
+    image:     default.png
+    body:     |
+      Zymeworks Inc. is a Canadian computational biotechnology company that is developing predictive computational technology for optimizing protein therapeutics.
+      Zymeworks is looking for an exceptionally talented software developer to compliment our current team. We are looking for motivated individuals who are eager to showcase their talent, demonstrating the passion and drive to grow within this progressive and developing Company.
+      Currently we have an opening for a Python Software Developer to take part in designing, building and expanding our suite of high performance molecular modeling tools for structure guided protein engineering.
+    location: Ulaanbaatar, Mongolia
+    is_featured:    false
+    sort_order: <?php echo $i."\n" ?>
+    is_active:    true
+
+<?php endfor; ?>

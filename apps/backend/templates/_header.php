@@ -1,0 +1,1 @@
+<h1 id="head"><a href="<?php echo url_for('homepage') ?>">Easy 1.0 Admin</a></h1>

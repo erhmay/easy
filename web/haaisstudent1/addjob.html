@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>school jobs</title>
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="page-wrap">
+<div id="topnav">
+<ul>
+<li><a href="#">Бүртгүүлэх</a></li>
+<li><a href="#">Нэвтрэх</a></li>
+</ul>
+</div><!-- topnav end -->
+
+<div id="header">
+<div id="logo"><h1>Student job search web site</h1></div>
+<ul>
+<li><a href="#">Нүүр</a></li>
+<li><a href="#">Төвийн тухай</a></li>
+<li><a href="#">Зөвлөгөө</a></li>
+<li><a href="#">Сургалт</a></li>
+<li><a href="#">Таньд хэрэгтэй</a></li>
+<li><a href="#">Холбоо барих</a></li>
+</ul>
+<div class="clear"></div>
+</div><!-- header end -->
+
+<div class="clear"></div>
+<div id="content">
+<div class="inner">
+<div id="maincontent">
+<form id="searchform" method="get" action="http://localhost/jobs/">
+<div>
+<input type="text" onblur="if (this.value == '') {this.value = 'Ажил хайх';}" onfocus="if (this.value == 'Ажил хайх') {this.value = '';}" value="Ажил хайх" name="s" title="" id="search" class="text">
+<label for="search"><input type="image" class="submit" title="Хай" alt="Хай" src="images/search.png"></label>
+</div>
+</form>
+<div class="clear"></div>
+<div class="section">
+<p>You must login or create an account in order to post a job &mdash; this will enable you to view, remove, or relist your listing in the future.</p>
+
+<form class="submit_form main_form" id="submit_form" enctype="multipart/form-data" method="post" action="http://localhost/jobs/?page_id=8">
+
+		<fieldset>
+			<legend>Company Details</legend>
+			<p><label for="your_name">Your Name/Company Name <span title="required">*</span></label> <input type="text" value="" id="your_name" name="your_name" class="text"></p>
+			<p class="optional"><label for="website">Website</label> <input type="text" id="website" value="http://" name="website" class="text"></p>
+			<p class="optional"><label for="company-logo">Logo (.jpg, .gif or .png)</label> <input type="file" id="company-logo" name="company-logo" class="text"></p>
+		</fieldset>	
+		<fieldset>
+			<legend>Job Details</legend>
+			<p><label for="job_title">Job title <span title="required">*</span></label> <input type="text" value="" id="job_title" name="job_title" class="text"></p>
+			<p><label for="job_type">Job type <span title="required">*</span></label> <select id="job_type" name="job_term_type">
+										<option>Freelance</option>
+												<option>Full-Time</option>
+												<option>Internship</option>
+												<option>Part-Time</option>
+												<option>Temporary</option>
+									</select></p>
+			<p class="optional"><label for="job_cat">Job Category </label> <select class="job_cat" id="job_term_cat" name="job_term_cat"><option value="">Select a category…</option>
+</select>
+</p>	
+		</fieldset>
+
+		<fieldset>
+			<legend>Job Description</legend>	
+			<p>Give details about the position, such as responsibilities &amp; salary.</p>				
+			<p><textarea class="mceEditor" id="details" name="details" cols="30" rows="5"></textarea></p>
+		</fieldset>
+		<fieldset>
+			<legend>How to apply</legend>
+			<p>Tell applicants how to apply &ndash; they will also be able to email you via the "apply" form on your job listing's page.</p>
+			<p><textarea class="how mceEditor" id="apply" name="apply" cols="30" rows="5"></textarea></p>			
+		</fieldset>			
+		<p><input type="submit" value="Next →" name="job_submit" class="submit"></p>
+			
+		<div class="clear"></div>
+			
+	</form>
+
+</div><!-- section end -->
+</div><!-- maincontent end -->
+<div id="sidebar">
+<div class="adbutton">
+<a class="button" href="#"><span>Ажил нэмэх</span></a>
+</div>
+
+<h2>widget tiitle</h2>
+<ul>
+<li><a href="#">Lorem ipsom doler</a></li>
+<li><a href="#">Lorem ipsom doler</a></li>
+<li><a href="#">Lorem ipsom doler</a></li>
+<li><a href="#">Lorem ipsom doler</a></li>
+<li><a href="#">Lorem ipsom doler</a></li>
+</ul>
+</div><!-- sidebar end -->
+<div class="clear"></div>
+</div><!-- inner end -->
+</div><!-- content end -->
+<div id="footer">
+
+<p>Copyright &copy; 2011 haais ouytni holboo. | Powered by <a target="_blank" href="http://webipress.com">webipress</a></p>
+
+</div><!-- footer end -->
+
+</div><!-- page-wrap end -->
+
+</body>
+</html>

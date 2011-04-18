@@ -1,5 +1,148 @@
-user:
-    tableName: User
-    actAs: Timestample
-    column:
-      
+# config/doctrine/schema.yml
+Page:
+  tableName: page
+  actAs:
+    Timestampable: ~
+  columns:
+    id:           { type: integer, primary: true,  autoincrement: true }
+    parent_id:    { type: integer, default: 0, notnull: true }
+    name :        { type: string(255), notnull: true }
+    description:  { type: string(), notnull: true }
+    is_visible:   { type: boolean, default: true, notnull: true }
+    show_on_homepage: { type: boolean, default: true, notnull: true }
+    is_featured: { type: boolean,default: false, notnull: true }
+    is_clickable: { type: boolean,default: false, notnull: true }
+    link:         { type: string(255), notnull: true}
+    image:        { type: string(255), notnull: true }
+    lft:          { type: integer, default: 0, notnull: true }
+    rgt:          { type: integer, default: 0, notnull: true }
+    level:        { type: integer(1), default: 0, notnull: true }
+    sort_order:   { type: integer(2),default : 0, notnull: true }
+  relations:
+    Page : { local: parent_id, foreign: id, type: one }
+    Tag: { class: Tag, refClass: PageTag, local: page_id, foreign: tag_id }
+    Project: { class: Project, refClass: PageProject, local: page_id, foreign: project_id }
+
+News:
+  tableName: news
+  actAs:
+    Timestampable: ~
+  columns:
+    type:        { type: integer(1), notnull: true, default: 1 }
+    title:       { type: string(255), notnull: true }
+    image:       { type: string(255),  notnull: true}
+    body:        { type: string(), notnull: true }
+    location:    { type: string(), notnull: true }
+    is_featured: { type: boolean,default: false, notnull: true }
+    sort_order:  { type: integer(2),default : 0, notnull: true }
+    is_active:   { type: boolean, default: true, notnull: true }
+
+Admin:
+  tableName: admin
+  columns:
+    id: { type: integer, primary: true, autoincrement: true }
+    firstname: { type: string(100), notnull: true}
+    lastname: { type: string(100), notnull: true}
+    username: { type: string(100), notnull: true }
+    password: { type: string(32), notnull: true }
+    email: { type: string(100)}
+    type: { type : integer(1), default: 0 , notnull: true}
+    last_logged_at: { type: timestamp(25), notnull: true}
+    created_at: {type: timestamp(25),notnull: true }
+    permission: {type: string(255)}
+
+JobCategory:
+  actAs:
+    Timestampable: ~
+  columns:
+    name:
+      type: string(255)
+      notnull:  true
+      unique: true
+
+Job:
+  actAs:
+    Timestampable: ~
+  columns:
+    category_id:
+      type: integer
+      notnull:  true
+    type:
+      type: string(255)
+    company:
+      type: string(255)
+      notnull:  true
+    logo:
+      type: string(255)
+    url:
+      type: string(255)
+    position:
+      type: string(255)
+      notnull:  true
+    location:
+      type: string(255)
+      notnull:  true
+    description:
+      type: string(4000)
+      notnull:  true
+    how_to_apply:
+      type: string(4000)
+      notnull:  true
+    token:
+      type: string(255)
+      notnull:  true
+      unique: true
+    is_public:
+      type: boolean
+      notnull:  true
+      default:  1
+    is_activated:
+      type: boolean
+      notnull:  true
+      default:  0
+    email:
+      type: string(255)
+      notnull:  true
+    expires_at:
+      type: timestamp
+      notnull:  true
+  relations:
+    JobCategory:
+      local:  category_id
+      foreign:  id
+      foreignAlias: Jobs
+
+
+User:
+  actAs:
+    Timestampable: ~
+  columns:
+    username:
+      type: string(255)
+    first_name:
+      type: string(255)
+    last_name:
+      type: string(255)
+    email:
+      type: string(255)
+      notnull:  true
+    type:
+      type: string(255)
+    status:
+      type: integer
+    company_name:
+      type: string(255)
+      notnull:  true
+    company_description:
+      type: string()
+      notnull:  true
+    logo:
+      type: string(255)
+    url:
+      type: string(255)
+    address:
+      type: string()
+      notnull:  true
+    location:
+      type: string(255)
+      notnull:  true
