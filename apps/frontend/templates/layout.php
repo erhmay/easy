@@ -16,19 +16,13 @@
             <div id="content">
             <div class="inner">
             <div id="maincontent">
-            <form id="searchform" method="get" action="http://localhost/jobs/">
-            <div>
-            <input type="text" onblur="if (this.value == '') {this.value = 'Ажил хайх';}" onfocus="if (this.value == 'Ажил хайх') {this.value = '';}" value="Ажил хайх" name="s" title="" id="search" class="text" />
-            <label for="search"><input type="image" class="submit" title="Хай" alt="Хай" src="/images/search.png"></label>
-            </div>
-            </form>
-            <div class="clear"></div>
-
+            
           <?php echo $sf_content ?>
 
             </div><!-- maincontent end -->
-
+            <?php if($sf_request->getParameter('module') == 'homepage'): ?>
             <?php include_partial('homepage/rightSideBar') ?>
+            <?php endif; ?>
 
             <div class="clear"></div>
             </div><!-- inner end -->

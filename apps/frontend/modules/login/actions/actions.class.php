@@ -15,9 +15,14 @@ class loginActions extends sfActions
   *
   * @param sfRequest $request A request object
   */
-  public function executeIndex(sfWebRequest $request)
+  public function executeLogin(sfWebRequest $request)
   {
     
+  }
+
+  public function executeLogout(sfWebRequest $request)
+  {
+
   }
 
   public function executeRegister(sfWebRequest $request)

@@ -12,4 +12,7 @@
  */
 class JobCategory extends BaseJobCategory
 {
+    public function  __toString() {
+        return $this->getName();
+    }
 }

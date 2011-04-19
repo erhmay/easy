@@ -9,16 +9,34 @@ class JobTable extends Doctrine_Table
 {
 
     static public $types = array(
-        1 => 'Freelance',
-        2 => 'Full-Time',
-        3 => 'Internship',
-        4 => 'Part-Time',
-        5 => 'Temporary',
+        'freelancer' => 'Freelance',
+        'full-time'  => 'Full-Time',
+        'internship' => 'Internship',
+        'part-time'  => 'Part-Time',
+        'temporary'  => 'Temporary',
+  );
+
+  static public $i18nTypes = array(
+        'freelancer'=> 'Хувиараа',
+        'full-time' => 'Бүтэн цагийн',
+        'internship'=> 'Дадлагын',
+        'part-time' => 'Цагийн',
+        'temporary' => 'Түр зуурын',
   );
 
   public function getTypes()
   {
     return self::$types;
+  }
+
+  public function getI18nTypes()
+  {
+    return self::$i18nTypes;
+  }
+
+  public function getI18nType($key)
+  {
+    return isset(self::$i18nTypes[$key]) ? self::$i18nTypes[$key]: '';
   }
 
     /**
