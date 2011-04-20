@@ -7,17 +7,22 @@
 </div>
 
 <div class="clear"></div>
-
 <div class="category">
-    <?php echo $job->getCategoryId() ?>
+    Хэвлэгдсэн: <i><?php echo date('Y-m-d', strtotime($job->getCreatedAt())) ?></i><br />
+    Төрөл: <i><?php echo $job->getJobCategory() ?></i><br />
+    Ажил олгогч: <i><?php echo $job->getCompany() ?></i><br />
 </div>
+<br />
 
 <div class="content">
     <div class="logo" style="float: left; width: 120px;"><img src="/uploads/logo/<?php echo $job->getLogo() ?>" alt="" /></div>
-    <?php echo $job->getCompany() ?>
+    
     <div class="description" style="float: left;"> <p><?php echo $job->getDescription() ?></p></div>
     <br />
-    <?php echo $job->getHowToApply() ?>
+    <h3>Хэрхэн холбоо барих</h3>
+    <div class="how_to_apply" style="margin-top:5px;">
+        <?php echo $job->getHowToApply() ?>
+    </div>
 </div>
 
 
