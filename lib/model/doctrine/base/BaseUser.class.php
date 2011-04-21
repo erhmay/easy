@@ -55,14 +55,17 @@ abstract class BaseUser extends sfDoctrineRecord
         $this->setTableName('user');
         $this->hasColumn('username', 'string', 255, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 255,
              ));
         $this->hasColumn('first_name', 'string', 255, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 255,
              ));
         $this->hasColumn('last_name', 'string', 255, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 255,
              ));
         $this->hasColumn('email', 'string', 255, array(
@@ -79,12 +82,10 @@ abstract class BaseUser extends sfDoctrineRecord
              ));
         $this->hasColumn('company_name', 'string', 255, array(
              'type' => 'string',
-             'notnull' => true,
              'length' => 255,
              ));
         $this->hasColumn('company_description', 'string', null, array(
              'type' => 'string',
-             'notnull' => true,
              'length' => '',
              ));
         $this->hasColumn('logo', 'string', 255, array(
@@ -97,12 +98,10 @@ abstract class BaseUser extends sfDoctrineRecord
              ));
         $this->hasColumn('address', 'string', null, array(
              'type' => 'string',
-             'notnull' => true,
              'length' => '',
              ));
         $this->hasColumn('location', 'string', 255, array(
              'type' => 'string',
-             'notnull' => true,
              'length' => 255,
              ));
     }

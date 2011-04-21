@@ -119,10 +119,13 @@ User:
   columns:
     username:
       type: string(255)
+      notnull:  true
     first_name:
       type: string(255)
+      notnull:  true
     last_name:
       type: string(255)
+      notnull:  true
     email:
       type: string(255)
       notnull:  true
@@ -132,17 +135,13 @@ User:
       type: integer
     company_name:
       type: string(255)
-      notnull:  true
     company_description:
       type: string()
-      notnull:  true
     logo:
       type: string(255)
     url:
       type: string(255)
     address:
       type: string()
-      notnull:  true
     location:
       type: string(255)
-      notnull:  true

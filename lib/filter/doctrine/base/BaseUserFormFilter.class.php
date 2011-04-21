@@ -13,18 +13,18 @@ abstract class BaseUserFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'username'            => new sfWidgetFormFilterInput(),
-      'first_name'          => new sfWidgetFormFilterInput(),
-      'last_name'           => new sfWidgetFormFilterInput(),
+      'username'            => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'first_name'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'last_name'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'email'               => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'type'                => new sfWidgetFormFilterInput(),
       'status'              => new sfWidgetFormFilterInput(),
-      'company_name'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'company_description' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'company_name'        => new sfWidgetFormFilterInput(),
+      'company_description' => new sfWidgetFormFilterInput(),
       'logo'                => new sfWidgetFormFilterInput(),
       'url'                 => new sfWidgetFormFilterInput(),
-      'address'             => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'location'            => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'address'             => new sfWidgetFormFilterInput(),
+      'location'            => new sfWidgetFormFilterInput(),
       'created_at'          => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'          => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
