@@ -8,6 +8,7 @@
  * @property string $username
  * @property string $first_name
  * @property string $last_name
+ * @property string $password
  * @property string $email
  * @property string $type
  * @property integer $status
@@ -21,6 +22,7 @@
  * @method string  getUsername()            Returns the current record's "username" value
  * @method string  getFirstName()           Returns the current record's "first_name" value
  * @method string  getLastName()            Returns the current record's "last_name" value
+ * @method string  getPassword()            Returns the current record's "password" value
  * @method string  getEmail()               Returns the current record's "email" value
  * @method string  getType()                Returns the current record's "type" value
  * @method integer getStatus()              Returns the current record's "status" value
@@ -33,6 +35,7 @@
  * @method User    setUsername()            Sets the current record's "username" value
  * @method User    setFirstName()           Sets the current record's "first_name" value
  * @method User    setLastName()            Sets the current record's "last_name" value
+ * @method User    setPassword()            Sets the current record's "password" value
  * @method User    setEmail()               Sets the current record's "email" value
  * @method User    setType()                Sets the current record's "type" value
  * @method User    setStatus()              Sets the current record's "status" value
@@ -64,6 +67,11 @@ abstract class BaseUser extends sfDoctrineRecord
              'length' => 255,
              ));
         $this->hasColumn('last_name', 'string', 255, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 255,
+             ));
+        $this->hasColumn('password', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 255,

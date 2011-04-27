@@ -17,8 +17,17 @@ class StudentRegisterForm extends UserForm
       unset(
               $this['company_name'],
               $this['company_description'],
-              $this['location']
+              $this['location'],
+              $this['url']
               );
 
   }
+
+  public function  bind(array $taintedValues = null, array $taintedFiles = null) {
+
+      $taintedValues['type'] = 'student';
+
+      parent::bind($taintedValues, $taintedFiles);
+    }
+
 }

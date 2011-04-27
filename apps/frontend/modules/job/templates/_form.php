@@ -5,7 +5,8 @@
 <?php if (!$form->getObject()->isNew()): ?>
 <input type="hidden" name="sf_method" value="put" />
 <?php endif; ?>
-
+        <?php echo $form->renderHiddenFields() ?>
+        <?php echo $form->renderGlobalErrors() ?>
         <fieldset>
             <legend>Компани дэлгэрэнгүй</legend>
             <p><?php echo $form['company']->renderError() ?></p>

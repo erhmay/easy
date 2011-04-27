@@ -15,8 +15,21 @@ class companyActions extends sfActions
   *
   * @param sfRequest $request A request object
   */
-  public function executeIndex(sfWebRequest $request)
+  public function executeRegister(sfWebRequest $request)
   {
-    $this->forward('default', 'module');
+    $this->form = new CompanyRegisterForm();
+      $form = $this->form;
+      if($request->isMethod(sfRequest::POST))
+      {
+          $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+            if ($form->isValid())
+            {
+                $user = $form->save();
+
+                $this->getUser()->setFlash('success', 'Та амжилттай бүртгүүллээ. Бүртгэлээ идэвхжүүлэхийн тулд имайл хаягаа шалгана уу');
+
+                $this->redirect('homepage');
+            }
+      }
   }
 }

@@ -18,11 +18,14 @@ class UserForm extends BaseUserForm
               $this['type']
               );
 
+     $this->widgetSchema['password'] = new sfWidgetFormInputPassword(array(), array());
+
 
      $this->widgetSchema->setLabels(array(
             'username'  =>  'Хэрэглэгчийн нэр',
             'first_name'  =>  'Таны нэр',
             'last_name'  =>  'Овог',
+            'password'  =>  'Нууц үг',
             'email'  =>  'Имайл',
             'location'  =>  'Байршил',
             'company_name'  =>  'Компани нэр',
@@ -34,6 +37,7 @@ class UserForm extends BaseUserForm
      $this->validatorSchema['username'] = new sfValidatorString(array('required' => true), array('required' => 'Хэрэглэгчийн нэрээ оруулна уу'));
      $this->validatorSchema['first_name'] = new sfValidatorString(array('required' => true), array('required' => 'Нэрээ оруулна уу'));
      $this->validatorSchema['last_name'] = new sfValidatorString(array('required' => true), array('required' => 'Овогоо оруулна уу'));
+     $this->validatorSchema['password'] = new sfValidatorString(array('required' => true), array('required' => 'Овогоо оруулна уу'));
      $this->validatorSchema['email'] = new sfValidatorEmail(array('required' => true), array('required' => 'Имайл хаягаа оруулна уу', 'invalid' => 'Буруу имайл хаяг, шалгаад дахин оруулна уу'));
      
      $this->validatorSchema['url'] = new sfValidatorUrl(array('required' => true), array('required' => 'Вэб хаягаа нэрээ оруулна уу'));
@@ -42,4 +46,12 @@ class UserForm extends BaseUserForm
 
 
   }
+
+  public function  bind(array $taintedValues = null, array $taintedFiles = null) {
+
+      $taintedValues['password'] = sha1($taintedValues['password']);
+
+      parent::bind($taintedValues, $taintedFiles);
+    }
+
 }

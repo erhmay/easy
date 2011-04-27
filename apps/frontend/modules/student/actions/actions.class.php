@@ -26,6 +26,8 @@ class studentActions extends sfActions
             {
                 $user = $form->save();
 
+                $this->getUser()->setFlash('success', 'Та амжилттай бүртгүүллээ. Бүртгэлээ идэвхжүүлэхийн тулд имайл хаягаа шалгана уу');
+
                 $this->redirect('homepage');
             }
       }

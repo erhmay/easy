@@ -1,0 +1,6 @@
+## YAML Template.
+---
+
+all:
+  is_secure: true
+  credential: Company

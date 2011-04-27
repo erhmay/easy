@@ -16,4 +16,16 @@ class UserTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('User');
     }
+
+    public function getUserByNamePassword($username, $password)
+    {
+        $q = Doctrine_Query::create()
+                ->select('u.*')
+                ->from('User u')
+                ->where('u.username = ?', $username)
+                ->andWhere('u.password = ?', sha1($password));
+
+        return $q->fetchOne();
+
+    }
 }

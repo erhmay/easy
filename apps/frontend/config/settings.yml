@@ -27,6 +27,9 @@ all:
     # Form security secret (CSRF protection)
     csrf_secret:            1e9c7436c7722bd09981f4db7a96b4890ea0c999
 
+    login_module:   user
+    login_action:   login
+
     # Output escaping settings
     escaping_strategy:      true
     escaping_method:        ESC_SPECIALCHARS
